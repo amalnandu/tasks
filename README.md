@@ -1,6 +1,9 @@
 # tasks
 
-A new Flutter project.
+This is a simple to-do app.
+Firebase is used as database.
+User can add tasks and it will be displayed,
+Deleting tasks is done by swiping the task.
 
 ## Getting Started
 
