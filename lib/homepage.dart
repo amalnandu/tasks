@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:firebase_core/firebase_core.dart';
 
 class homepage extends StatelessWidget {
   homepage({Key? key}) : super(key: key);
@@ -18,9 +17,13 @@ class homepage extends StatelessWidget {
   }
 
   void addTask() {
-    FirebaseFirestore.instance
-        .collection("todos")
-        .add({"title": textcontrol.text});
+    if (textcontrol.text == "") {
+      return;
+    } else {
+      FirebaseFirestore.instance
+          .collection("todos")
+          .add({"title": textcontrol.text});
+    }
   }
 
   onDelete(String id) {
